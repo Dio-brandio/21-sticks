@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>21-Sticks</title>
+</head>
+
+<body>
+
+    <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+    </div>
+
+    <div class="container">
+        <h1><span> 21-Sticks</span></h1>
+    </div>
+    <h1>Rules:-</h1>
+    <ol>
+        <li>There are 21 sticks between you and computer.</li>
+        <li>You can select minimum 1 and maximum 4 sticks.</li>
+        <li>First You have to select some sticks between 1 to 4.Then computer will select some sticks between 1 to 4.</li>
+        <li>And then who will select the last stick will be the looser.</li>
+    </ol>
+    <div class="button">
+        <button onclick="game()">Lets start
+    <span></span><span></span><span></span><span></span>
+    
+    </button>
+    </div>
+
+</body>
+<script>
+    function game() {
+        let user, system, total = 21;
+        while (total > 0) {
+
+            user = parseInt(prompt(`${total} Sticks Are remaining
+Choose Sticks Between 1 to 4
+            `));
+            if (user > 0 && user < 5) {
+                system = 5 - user;
+                total = parseInt(total - (user + system));
+                alert("System selected " + system + " Sticks.  " + total + " Sticks Are Remaining ");
+            } else {
+                alert(`Why you are oversmarting bruh
+                Bola to sahi 1 se 4 ke bich daal            
+                `);
+            }
+            if (total == 1) {
+                alert("Only 1 stick is remaining.You loose Noob")
+                break
+            }
+        }
+    }
+</script>
+
+
+</html>
